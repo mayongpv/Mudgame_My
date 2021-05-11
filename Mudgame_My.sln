@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mudgame_My", "Mudgame_My\Mudgame_My.csproj", "{3776FFD4-AF01-4203-B22C-9C1331EC7843}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3776FFD4-AF01-4203-B22C-9C1331EC7843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3776FFD4-AF01-4203-B22C-9C1331EC7843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3776FFD4-AF01-4203-B22C-9C1331EC7843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3776FFD4-AF01-4203-B22C-9C1331EC7843}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2EAFEC8-14F5-442B-8945-9AC6D254448F}
+	EndGlobalSection
+EndGlobal
