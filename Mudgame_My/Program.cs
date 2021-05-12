@@ -32,15 +32,53 @@ namespace Mudgame_My
             
             int index  = random.Next(names.Count);
             var playerName = names[index];
-            Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
 
 
-            //플레이어 능력치를 입력받자. power, hp
-            string powerString = Console.ReadLine(); //power
-            string hpString = Console.ReadLine(); //hp
 
-            int power = int.Parse(powerString);
+            ////플레이어 능력치를 입력받자. power, hp
+            //string powerString = Console.ReadLine(); //power
+            //string hpString = Console.ReadLine(); //hp
 
+            //int power = int.Parse(powerString);
+
+
+            // 나온 값에 따라 빨리 죽는 캐릭터를 만들자
+            // 파인애플 피자 나올 시 -> 당신은 인기 없는 피자라 사망했습니다. - 게임 오버
+
+            if (playerName == names[4])
+            {
+                Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
+                Console.WriteLine("당신은 인기 없는 피자라 사망했습니다.");
+            }
+            else
+            {
+                Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
+            }
+            // 다른 종류 나올 시 진행
+
+            //갑자기 등장한 그림자
+            //야 너 피자 아니지
+            //뒤를 보니 패퍼로니 피자가 있다. 
+
+            //1. 도망친다. 2. 햄을 뗀다. 3. 사실대로 말한다.
+
+            //도망친다-> 도망치다 넘어졌습니다. 당신의 정체가 들통났습니다. 사형
+            // 햄을 뗀다 패퍼로니 피자는 부끄러워 도망감 
+            //사실대로 말한다 -> 경찰에게 붙잡혀 사형
+
+            //휴 한고비를 넘겼다. 
+            //이 나라를 빠져나갈 방법을 찾아보자.
+
+            //피클을 만났습니다.
+            //안녕 나는 스파이 피클이야. 위험할 땐 나를 불러
+            //ok
+
+            //
+
+
+
+
+            //목표 : 피자나라에서 살아남기
 
 
 
