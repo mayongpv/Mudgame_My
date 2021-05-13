@@ -80,17 +80,17 @@ namespace Mudgame_My
             }
 
 
-                Console.WriteLine("모험을 할 준비가 되었습니다. Press any key.");
-                Console.ReadKey();  // 키 입력 받기
+            Console.WriteLine("모험을 할 준비가 되었습니다. Press any key.");
+            Console.ReadKey();  // 키 입력 받기
 
 
-                Console.WriteLine("불현듯 등 뒤가 쌔하다. Press any key.");
-                Console.ReadKey();  // 키 입력 받기           
-                Console.WriteLine("뒤를 돌아보니 패퍼로니 피자가 있다.");
-                Console.WriteLine("야 너 피자 아니지. Press any key");
-                Console.ReadKey();
+            Console.WriteLine("불현듯 등 뒤가 쌔하다. Press any key.");
+            Console.ReadKey();  // 키 입력 받기           
+            Console.WriteLine("뒤를 돌아보니 패퍼로니 피자가 있다.");
+            Console.WriteLine("야 너 피자 아니지. Press any key");
+            Console.ReadKey();
 
-   
+            while (reTry)
             {
 
                 Console.WriteLine("1.도망친다. 2.싸운다. 3.햄을 뗀다. 4.사실대로 말한다. ");
@@ -123,12 +123,23 @@ namespace Mudgame_My
                         break;
                 }
                 //game over에서 다시 고르는거 나오게 하기
+                if (userInput = GetAllowedAnswer[2]) 
+                {
+                    Console.ReadKey();  // 키 입력 받기
+                }
+                else
+                {
+                    Console.WriteLine("다시 하시겠습니까? (Y)es/(N)o");
+                    reTry = Console.ReadLine().ToUpper() == "Y";
+                }
 
             }
 
 
             Console.WriteLine("휴 한고비 넘겼다. 여기서 빠져나갈 방법을 찾아보자.");
             Console.WriteLine("이제 뭘하지?");
+
+
 
             {
                 Console.WriteLine("1.마을을 둘러본다. 2.무기를 찾는다. 3.친구를 만든다 ");
@@ -147,29 +158,41 @@ namespace Mudgame_My
                         break;
                 }
 
-                Console.ReadKey();
-                Console.WriteLine("인기척이 느껴집니다.");
-                Console.WriteLine("뒤돌아보니 피클이 있습니다.  Press any key.");
-                Console.ReadKey();
-                Console.WriteLine("안녕 나는 피클이야. 스파이지. " +
-                    "너 혹시 피자 나라에서 탈출할 방법을 찾고 있니?" +
-                    "내가 알려줄게. " +
-                    "너를 제외한 피자 7조각을 모아." +
-                    "그럼 여길 탈출할 수 있어." );
-                Console.WriteLine("Press any key");
-                Console.ReadKey();
-
-
-
-                
 
             }
+        
+
+            Console.ReadKey();
+            Console.WriteLine("인기척이 느껴집니다.");
+            Console.WriteLine("뒤돌아보니 피클이 있습니다.  Press any key.");
+            Console.ReadKey();
+            Console.WriteLine("안녕 나는 피클이야. 스파이지. " +
+                "너 혹시 피자 나라에서 탈출할 방법을 찾고 있니?" +
+                "내가 알려줄게. " +
+                "너를 제외한 피자 7조각을 모아." +
+                "그럼 여길 탈출할 수 있어.");
+            Console.WriteLine("Press any key");
+            Console.ReadKey();
+            Console.WriteLine("미션이 주어졌습니다. 당신은 피자 7조각을 모아야합니다.");
 
 
+            //몬스터 출현 
+            //몬스터가 공격한다. 나도 공격한다. HP 가감
+            //
+
+
+
+
+
+        
+        }
+
+    
 
         }
     }
-}
+
+
 
 
 
