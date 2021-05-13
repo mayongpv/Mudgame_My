@@ -11,11 +11,11 @@ namespace Mudgame_My
         static void Main(string[] args)
         {
             //피자 나라에 오신걸 환영합니다.
-            Console.WriteLine("피자 나라에 오신 걸 환영합니다.");
+            Console.WriteLine("피자 나라에 오신 걸 환영합니다.Press any key.");
             Console.ReadKey();  // 키 입력 받기
-            Console.WriteLine("피자 나라에서는 피자가 아닌 모든 생명체는 공격을 받습니다 .");
+            Console.WriteLine("피자 나라에서는 피자가 아닌 모든 생명체는 공격을 받습니다. Press any key.");
             Console.ReadKey();  // 키 입력 받기
-            Console.WriteLine("피자로 변신합니다. 종류는 랜덤으로 설정됩니다. ");
+            Console.WriteLine("피자로 변신합니다. 종류는 랜덤으로 설정됩니다. Press any key. ");
             Console.ReadKey();  // 키 입력 받기
             //플레이어 이름 랜덤 설정
             //숫자 랜덤만 배웠다 -> 지정된 문자 내에서 랜덤으로 생성
@@ -49,11 +49,60 @@ namespace Mudgame_My
             if (playerName == names[4])
             {
                 Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
-                Console.WriteLine("당신은 인기 없는 피자라 사망했습니다.");
+                Console.WriteLine("당신은 인기 없는 피자라 사망했습니다. Game Over");
             }
             else
             {
                 Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
+            }
+
+
+
+
+            //1. 도망친다. 2. 싸운다  3. 햄을 뗀다. 4. 사실대로 말한다.
+
+
+
+            //private static string GetAllowedAnswer(params string[] alllowsAnserStringArray)
+            //{
+            //    string retryOrQuit;
+            //    List<string> allowedAnswer = new List<string>(alllowsAnserStringArray);
+            //    do
+            //    {
+            //        retryOrQuit = Console.ReadLine().ToUpper();
+            //    } while (allowedAnswer.Contains(retryOrQuit) == false);
+            //    return retryOrQuit;
+
+
+            char userInput = GetAllowedAnswer("1", "2", "3", "4")[0];
+            switch (userInput)
+            {
+                case '1': //도망친다
+                    Console.WriteLine("도망칩니다. Press any key");
+                    Console.ReadKey();  // 키 입력 받기
+                    Console.WriteLine("도망치다 넘어졌습니다. 당신의 정체가 들통났습니다. Press any key ");
+                    Console.ReadKey();  // 키 입력 받기
+                    Console.WriteLine("사형. Game Over");
+
+                case '2': //싸운다
+                    Console.WriteLine("싸움을 시작합니다. Press any key");
+                    Console.ReadKey();  // 키 입력 받기
+                                        //hp를 할당 받아야한다.
+                                        //-> 공격하고 몬스터의 hp가 닳는 것 필요
+                                        //실행한다.
+                                        //이긴다 -> 다음 상황
+                                        //진다 -> 사형
+
+                case '3'://햄을 뗀다
+                    Console.WriteLine("패퍼로니의 햄을 뗍니다. Press any key.");
+                    Console.ReadKey();
+                    Console.WriteLine("패퍼로니가 부끄러워하며 도망갔습니다.");
+                //다음 단계로
+
+                case '4': //사실대로 말한다.
+                    Console.WriteLine("패퍼로니에게 사실대로 이야기 합니다. Press any key");
+                    Console.ReadKey();
+                    Console.WriteLine("패퍼로니가 당신을 신고했습니다. 사형. Game Over");
             }
 
         }
@@ -61,12 +110,7 @@ namespace Mudgame_My
 
 
 
-
-        //갑자기 등장한 그림자
-        //야 너 피자 아니지
-        //뒤를 보니 패퍼로니 피자가 있다. 
-
-        //1. 도망친다. 2. 햄을 뗀다. 3. 사실대로 말한다.
+       
 
         //도망친다-> 도망치다 넘어졌습니다. 당신의 정체가 들통났습니다. 사형
         // 햄을 뗀다 패퍼로니 피자는 부끄러워 도망감 
