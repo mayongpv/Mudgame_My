@@ -22,7 +22,7 @@ namespace Mudgame_My
             //문자열 여러개를 미리 설정해놓고
             // 거기서 랜덤으로 지정
             List<string> names = new List<string>();
-            names.Add("패퍼로니");
+            names.Add("고르곤졸라");
             names.Add("치즈");
             names.Add("불고기");
             names.Add("슈퍼슈프림");
@@ -105,6 +105,9 @@ namespace Mudgame_My
                     Console.WriteLine("패퍼로니가 당신을 신고했습니다. 사형. Game Over");
             }
 
+            Console.WriteLine("휴 한고비 넘겼다. 이 나라를 빠져나갈 방법을 생각해보자. Press any key");
+            Console.ReadKey();
+
         }
     }
 
@@ -118,6 +121,8 @@ namespace Mudgame_My
 
         //휴 한고비를 넘겼다. 
         //이 나라를 빠져나갈 방법을 찾아보자.
+
+    // 주위를 둘러본다. 
 
         //피클을 만났습니다.
         //안녕 나는 스파이 피클이야. 위험할 땐 나를 불러
