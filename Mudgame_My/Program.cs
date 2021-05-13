@@ -160,7 +160,7 @@ namespace Mudgame_My
 
 
             }
-        
+
 
             Console.ReadKey();
             Console.WriteLine("인기척이 느껴집니다.");
@@ -178,19 +178,19 @@ namespace Mudgame_My
 
             //전투 모드
             //주인공에게 HP와 power를 부여한다. 랜덤
-             static Player MakePlayer()
+            static Player MakePlayer()
             {
                 Console.WriteLine("전투 모드에 진입합니다");
-                
+
                 bool isReset = true;
                 int power = 0, hp = 0;
 
                 while (isReset)
                 {
-                    power = random.Next(4, 10);// 4는 포함하고 10은 포함하지 않는 -> 4 ~ 9
+                    power = random.Next(4, 9);// 4는 포함하고 10은 포함하지 않는 -> 4 ~ 9
                     hp = random.Next(3, 10);
                     //당신의 능력은 입니다. 공격력 3, 체력 5 입니다.
-                    Console.WriteLine($"당신은 공격력:{power}, 체력:{hp} 입니다. 다시 생성 하시겠습니까?(Y/N)"); 
+                    Console.WriteLine($"당신은 공격력:{power}, 체력:{hp} 입니다. 다시 생성 하시겠습니까?(Y/N)");
                     string resetAnswer = Console.ReadLine(); //  y, n
                     isReset = resetAnswer.ToLower() == "y";
                 };
@@ -198,22 +198,60 @@ namespace Mudgame_My
                 Player player = new Player(power, hp);
 
                 Console.WriteLine(player + " : logTest"));
-                return player;
-            }
+            return player;
+
 
             //몬스터 출현 
             //몬스터가 공격한다. 나도 공격한다. HP 가감
             //몬스터를 7마리 잡아야 이긴다.
 
 
-            //몬스터를 7마리 잡았다. 하지만 lose. 피클이 신고함. 
-            //감옥에 갔습니다. 
+            Console.WriteLine("몬스터 잡는건 미완성입니다. 시간이 없으니 싸운 셈 칩니다.");
+            Console.WriteLine("몬스터 잡고 싶으면 다른 게임 하셈" +
+                "Press ant key.");
+            Console.WriteLine("");
+            Console.WriteLine("축하합니다 피자 7조각을 모았습니다!" +
+                "Press any key");
+
+            Console.WriteLine("당신은 감옥에 갇혔습니다.");
+            Console.WriteLine("Lose" +
+                "+ Press any key");
+
+
+            Console.WriteLine("다시 하시겠습니까? (Y)es/(N)o");
+            char userInput = GetAllowedAnswer("Y", "N")[0];
+            switch (userInput)
+            {
+                case 'y': //다시하기
+                    Console.WriteLine("다시 한다고요?" +
+                        "다시 해도 당신은 탈출할 수 없습니다." +
+                        "Press any key.");
+                    Console.WriteLine("왜냐면 개발자가 그렇게 설정 했음.");
+                    Console.ReadKey();  // 키 입력 받기 
+                    break;
+                case 'n': //안하기
+                    Console.WriteLine("게임을 다시 시도하지 않습니다. " +
+                        "당신은 피자나라에 영원히 갇혔습니다." +
+                        "Press any key.");
+                    Console.ReadKey();
+                    Console.WriteLine("당신은 벌로 평생 피자를 먹을 수 없는 저주에 걸렸습니다.");
+                    break;
+
+
+            }
+
+
+       
+        ////몬스터를 7마리 잡았다-> 하지만 lose. 피클이 신고함. 
+        //Console.WriteLine("축하합니다! 피자 7조각을 모았습니다!");
+
+        //    //당신은 감옥에 갔습니다. 
 
             //다시 하시겠습니까? (이 게임은 lose 밖에 없습니다)
             //y->계속해도 탈출할 수 없습니다. 왜냐면 개발자가 그렇게 설정했음. 
             //n->당신은 피자나라에 갇힌 벌로 평생 피자를 먹을 수 없습니다. 
 
-
+           
 
 
 
