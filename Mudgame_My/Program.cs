@@ -41,6 +41,8 @@ namespace Mudgame_My
             {
                 Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
                 Console.WriteLine("당신은 인기 없는 피자라 사망했습니다. Game Over");
+                Console.ReadKey();  // 키 입력 받기
+                Console.WriteLine("뻥입니다.");
             }
             else
             {
@@ -52,7 +54,7 @@ namespace Mudgame_My
             Console.ReadKey();  // 키 입력 받기
 
 
-            Console.WriteLine("갑자기 뒤에서 그림자가 나타났다. Press any key.");
+            Console.WriteLine("불현듯 등 뒤가 쌔하다. Press any key.");
             Console.ReadKey();  // 키 입력 받기           
             Console.WriteLine("뒤를 돌아보니 패퍼로니 피자가 있다.");
             Console.WriteLine("야 너 피자 아니지. Press any key");
@@ -60,7 +62,7 @@ namespace Mudgame_My
 
 
 
-             static string GetAllowedAnswer(params string[] alllowsAnserStringArray)
+            static string GetAllowedAnswer(params string[] alllowsAnserStringArray)
             {
                 string retryOrQuit;
                 List<string> allowedAnswer = new List<string>(alllowsAnserStringArray);
@@ -70,7 +72,6 @@ namespace Mudgame_My
                 } while (allowedAnswer.Contains(retryOrQuit) == false);
                 return retryOrQuit;
             }
-
 
             {
 
@@ -86,10 +87,8 @@ namespace Mudgame_My
                         break;
                     case '2': // 공격
                         Console.WriteLine("싸움을 시작합니다. Press any key");
-                        Console.ReadKey();  // 키 입력 받기
-                                            //hp를 할당 받아야한다.
-                                            //-> 공격하고 몬스터의 hp가 닳는 것 필요
-                                            //아니 그냥 이긴다로 간다.
+                        Console.ReadKey();
+                        Console.WriteLine("막상 공격적인 태도를 취하니 패퍼로니가 달아났습니다.");
                         break;
                     case '3': // 회복
                         Console.WriteLine("패퍼로니의 햄을 뗍니다. Press any key.");
@@ -105,29 +104,42 @@ namespace Mudgame_My
                         Console.WriteLine("없는 명령어 입니다" + userInput);
                         break;
                 }
+                //game over에서 다시 고르는거 나오게 하기
 
-               
             }
-          
 
-            Console.WriteLine("휴 한고비 넘겼다. 여기서 빠져나갈 방법을 찾아보자. Press any key");
+
+            Console.WriteLine("휴 한고비 넘겼다. 여기서 빠져나갈 방법을 찾아보자.");
+            Console.WriteLine("이제 뭘하지?");
+
+            {
+                Console.WriteLine("1.마을을 둘러본다. 2.무기를 찾는다. 3.친구를 만든다 ");
+
+                char userInput = GetAllowedAnswer("1", "2", "3")[0];
+                switch (userInput)
+                {
+                    case '1':// 마을을 둘러본다
+                        Console.WriteLine($"마을을 둘러본다. 이제야 피자 나라의 풍경이 눈에 들어온다. ");
+                        break;
+                    case '2':// 무기를 찾는다
+                        Console.WriteLine($"만약에 대비해 무기가 될 만한 것들을 찾아본다.");
+                        break;
+                    case '3':// 친구를 만든다
+                        Console.WriteLine($"가장 착해보이는 피자가 있나 살펴본다.");
+                        break;
+                }
+
+            }
 
 
         }
-
-
     }
 }
 
 
 
 
-       
-
- 
-        //휴 한고비를 넘겼다. 
-        //이 나라를 빠져나갈 방법을 찾아보자.
-
+   
         //피클을 만났습니다.
         //안녕 나는 스파이 피클이야. 위험할 땐 나를 불러
         //ok
