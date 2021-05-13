@@ -123,7 +123,7 @@ namespace Mudgame_My
                         break;
                 }
                 //game over에서 다시 고르는거 나오게 하기
-                if (userInput = GetAllowedAnswer[2]) 
+                if (userInput = Readkey.alpha2)/// ??????? 
                 {
                     Console.ReadKey();  // 키 입력 받기
                 }
@@ -176,9 +176,19 @@ namespace Mudgame_My
             Console.WriteLine("미션이 주어졌습니다. 당신은 피자 7조각을 모아야합니다.");
 
 
+
+
             //몬스터 출현 
             //몬스터가 공격한다. 나도 공격한다. HP 가감
-            //
+            //몬스터를 7마리 잡아야 이긴다.
+
+
+            //몬스터를 7마리 잡았다. 하지만 lose. 피클이 신고함. 
+            //감옥에 갔습니다. 
+
+            //다시 하시겠습니까? (이 게임은 lose 밖에 없습니다)
+            //y->계속해도 탈출할 수 없습니다. 왜냐면 개발자가 그렇게 설정했음. 
+            //n->당신은 피자나라에 갇힌 벌로 평생 피자를 먹을 수 없습니다. 
 
 
 
