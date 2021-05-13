@@ -4,8 +4,20 @@ using System.Collections.Generic;
 namespace Mudgame_My
 {
     class Program
+
     {
         //먼저 실행하고 싶은 것들을 적어보자
+
+        private static string GetAllowedAnswer(params string[] alllowsAnserStringArray)
+        {
+            string retryOrQuit;
+            List<string> allowedAnswer = new List<string>(alllowsAnserStringArray);
+            do
+            {
+                retryOrQuit = Console.ReadLine().ToUpper();
+            } while (allowedAnswer.Contains(retryOrQuit) == false);
+            return retryOrQuit;
+        }
 
         static void Main(string[] args)
         {
@@ -16,63 +28,72 @@ namespace Mudgame_My
             Console.ReadKey();  // 키 입력 받기
             Console.WriteLine("피자로 변신합니다. 종류는 랜덤으로 설정됩니다. Press any key. ");
             Console.ReadKey();  // 키 입력 받기
-            //플레이어 이름 랜덤 설정
-            //숫자 랜덤만 배웠다 -> 지정된 문자 내에서 랜덤으로 생성
-            //문자열 여러개를 미리 설정해놓고
-            // 거기서 랜덤으로 지정
-            List<string> names = new List<string>();
-            names.Add("고르곤졸라");
-            names.Add("치즈");
-            names.Add("불고기");
-            names.Add("슈퍼슈프림");
-            names.Add("파인애플");
+                                //플레이어 이름 랜덤 설정
+                                //숫자 랜덤만 배웠다 -> 지정된 문자 내에서 랜덤으로 생성
+                                //문자열 여러개를 미리 설정해놓고
+                                // 거기서 랜덤으로 지정
 
-            //0부터 시작
-            Random random = new Random();
-
-            int index = random.Next(names.Count);
-            var playerName = names[index];
-
-
-            // 나온 값에 따라 빨리 죽는 캐릭터를 만들자
-            // 파인애플 피자 나올 시 -> 당신은 인기 없는 피자라 사망했습니다. - 게임 오버
-
-            if (playerName == names[4])
+            int tryCount = 0;
+            bool reTry = true;
+            //반복.
+            while (reTry)
             {
-                Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
-                Console.WriteLine("당신은 인기 없는 피자라 사망했습니다. Game Over");
-                Console.ReadKey();  // 키 입력 받기
-                Console.WriteLine("뻥입니다.");
-            }
-            else
-            {
-                Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
-            }
-
-
-            Console.WriteLine("모험을 할 준비가 되었습니다. Press any key.");
-            Console.ReadKey();  // 키 입력 받기
-
-
-            Console.WriteLine("불현듯 등 뒤가 쌔하다. Press any key.");
-            Console.ReadKey();  // 키 입력 받기           
-            Console.WriteLine("뒤를 돌아보니 패퍼로니 피자가 있다.");
-            Console.WriteLine("야 너 피자 아니지. Press any key");
-            Console.ReadKey();
 
 
 
-            static string GetAllowedAnswer(params string[] alllowsAnserStringArray)
-            {
-                string retryOrQuit;
-                List<string> allowedAnswer = new List<string>(alllowsAnserStringArray);
-                do
+                List<string> names = new List<string>();
+                names.Add("고르곤졸라");
+                names.Add("치즈");
+                names.Add("불고기");
+                names.Add("슈퍼슈프림");
+                names.Add("파인애플");
+
+                //0부터 시작
+                Random random = new Random();
+
+                int index = random.Next(names.Count);
+                var playerName = names[index];
+
+
+                // 나온 값에 따라 빨리 죽는 캐릭터를 만들자
+                // 파인애플 피자 나올 시 -> 당신은 인기 없는 피자라 사망했습니다. - 게임 오버
+
+                if (playerName == names[4])
                 {
-                    retryOrQuit = Console.ReadLine().ToUpper();
-                } while (allowedAnswer.Contains(retryOrQuit) == false);
-                return retryOrQuit;
+                    Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
+                    Console.WriteLine("당신은 인기 없는 피자라 사망했습니다. Game Over");
+                    Console.ReadKey();  // 키 입력 받기
+                    Console.WriteLine("뻥입니다.");
+                }
+                else
+                {
+                    Console.WriteLine("당신은 " + playerName + " 피자가 되었습니다.");
+                }
+
+                Console.WriteLine("다시 하시겠습니까? (Y)es/(N)o");
+                reTry = Console.ReadLine().ToUpper() == "Y";
+
+                if (tryCount > 5)
+                {
+                    Console.WriteLine("그냥 하지마");
+                }
             }
 
+
+                Console.WriteLine("모험을 할 준비가 되었습니다. Press any key.");
+                Console.ReadKey();  // 키 입력 받기
+
+
+                Console.WriteLine("불현듯 등 뒤가 쌔하다. Press any key.");
+                Console.ReadKey();  // 키 입력 받기           
+                Console.WriteLine("뒤를 돌아보니 패퍼로니 피자가 있다.");
+                Console.WriteLine("야 너 피자 아니지. Press any key");
+                Console.ReadKey();
+
+
+
+
+   
             {
 
                 Console.WriteLine("1.도망친다. 2.싸운다. 3.햄을 뗀다. 4.사실대로 말한다. ");
