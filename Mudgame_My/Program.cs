@@ -90,9 +90,6 @@ namespace Mudgame_My
                 Console.WriteLine("야 너 피자 아니지. Press any key");
                 Console.ReadKey();
 
-
-
-
    
             {
 
@@ -150,22 +147,30 @@ namespace Mudgame_My
                         break;
                 }
 
+                Console.ReadKey();
+                Console.WriteLine("인기척이 느껴집니다.");
+                Console.WriteLine("뒤돌아보니 피클이 있습니다.  Press any key.");
+                Console.ReadKey();
+                Console.WriteLine("안녕 나는 피클이야. 스파이지. " +
+                    "너 혹시 피자 나라에서 탈출할 방법을 찾고 있니?" +
+                    "내가 알려줄게. " +
+                    "너를 제외한 피자 7조각을 모아." +
+                    "그럼 여길 탈출할 수 있어." );
+                Console.WriteLine("Press any key");
+                Console.ReadKey();
+
+
+
+                
+
             }
+
 
 
         }
     }
 }
 
-
-
-
-   
-        //피클을 만났습니다.
-        //안녕 나는 스파이 피클이야. 위험할 땐 나를 불러
-        //ok
-
-        //
 
 
 
