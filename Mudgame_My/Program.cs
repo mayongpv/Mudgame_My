@@ -176,7 +176,30 @@ namespace Mudgame_My
             Console.WriteLine("미션이 주어졌습니다. 당신은 피자 7조각을 모아야합니다.");
 
 
+            //전투 모드
+            //주인공에게 HP와 power를 부여한다. 랜덤
+             static Player MakePlayer()
+            {
+                Console.WriteLine("전투 모드에 진입합니다");
+                
+                bool isReset = true;
+                int power = 0, hp = 0;
 
+                while (isReset)
+                {
+                    power = random.Next(4, 10);// 4는 포함하고 10은 포함하지 않는 -> 4 ~ 9
+                    hp = random.Next(3, 10);
+                    //당신의 능력은 입니다. 공격력 3, 체력 5 입니다.
+                    Console.WriteLine($"당신은 공격력:{power}, 체력:{hp} 입니다. 다시 생성 하시겠습니까?(Y/N)"); 
+                    string resetAnswer = Console.ReadLine(); //  y, n
+                    isReset = resetAnswer.ToLower() == "y";
+                };
+
+                Player player = new Player(power, hp);
+
+                Console.WriteLine(player + " : logTest"));
+                return player;
+            }
 
             //몬스터 출현 
             //몬스터가 공격한다. 나도 공격한다. HP 가감
@@ -194,7 +217,7 @@ namespace Mudgame_My
 
 
 
-        
+
         }
 
     
