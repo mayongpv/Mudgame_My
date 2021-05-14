@@ -234,11 +234,13 @@ namespace Mudgame_My
                             Console.ReadKey();  // 키 입력 받기 
                             break;
                         case '1': //안하기
-                            Console.WriteLine("게임을 다시 시도하지 않습니다. " +
-                                "당신은 피자나라에 영원히 갇혔습니다." +
-                                "Press any key.");
+                            Console.WriteLine("게임을 다시 시도하지 않습니다. ");
+                            Console.WriteLine("당신은 피자나라에 영원히 갇혔습니다.");
+                             
                             Console.ReadKey();
                             Console.WriteLine("당신은 벌로 평생 피자를 먹을 수 없는 저주에 걸렸습니다.");
+                            Console.ReadKey();
+                            Console.WriteLine("GAME OVER :-)");
                             break;
                     }
                 }
