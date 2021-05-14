@@ -125,7 +125,7 @@ namespace Mudgame_My
                         Console.WriteLine("다시 하시겠습니까? (Y)es/(N)o");
 
 
-                      
+
                 }
 
 
@@ -267,8 +267,6 @@ namespace Mudgame_My
     }
 }
 
-        }
-    }
 
 
 
